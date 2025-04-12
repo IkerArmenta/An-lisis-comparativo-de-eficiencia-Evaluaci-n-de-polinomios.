@@ -1,35 +1,31 @@
-# Evaluación de Polinomios
+# Evaluación de Polinomios - Comparación de Métodos
 
-Este proyecto en C++ compara dos métodos clásicos para evaluar polinomios:
+Me llamo **IKER GERARDO SANCHEZ ARMENTA**
 
-- **Método Estándar:** Evalúa el polinomio calculando, para cada término, *coeficiente · (x<sup>i</sup>)* utilizando la función `std::pow`.
-- **Método de Horner:** Emplea el algoritmo de Horner, que reduce las operaciones aritméticas, evaluando el polinomio de manera más eficiente.
+## Nombre del Proyecto y Resumen
 
-El programa genera aleatoriamente polinomios de distintos grados (de 10 a 1000, con incrementos de 10) y un valor aleatorio para `x` (en el rango [-10, 10] excluyendo el cero). Para cada caso, se mide el tiempo promedio (en nanosegundos) de ejecución de ambos métodos, ejecutando cada evaluación 1000 veces. Los resultados se registran en un archivo CSV llamado `resultados.csv`.
+**Evaluación de Polinomios - Comparación de Métodos** es un proyecto en C++ diseñado para comparar dos algoritmos clásicos de evaluación de polinomios:
 
-## Características
+- **Método Estándar:** Calcula el polinomio sumando cada término, es decir, cada coeficiente multiplicado por x elevado a la potencia correspondiente.
+- **Método de Horner:** Reestructura el polinomio en forma anidada, reduciendo significativamente la cantidad de operaciones aritméticas, lo que optimiza la evaluación del polinomio.
 
-- **Generación de Coeficientes:**  
-  Se crean coeficientes aleatorios entre -10 y 10 para cada polinomio.
-  
-- **Generación de `x`:**  
-  Se obtiene un valor aleatorio en el rango [-10, 10] (evitando el cero).
-  
-- **Medición del Rendimiento:**  
-  La función `medirTiempo` utiliza `<chrono>` para obtener tiempos precisos, repitiendo la evaluación 1000 veces y sacando un promedio.
-  
-- **Registro de Resultados:**  
-  Los tiempos de ejecución para cada grado se guardan en `resultados.csv` con la siguiente estructura:  
-  `grado,tiempo_estandar_ns,tiempo_horner_ns`.
+El programa genera polinomios con coeficientes aleatorios y evalúa cada uno en un valor aleatorio de x. Para cada polinomio se mide el tiempo de ejecución promedio de los dos métodos (realizando 1000 repeticiones) y se registran los resultados en un archivo CSV (`resultados.csv`).
 
-## Requisitos
+## Autor
 
-- Compilador con soporte para C++17.
-- Sistema operativo: Este código es multiplataforma (Linux, macOS o Windows).
+**IKER GERARDO SANCHEZ ARMENTA**
 
-## Compilación
+## Requisitos del Sistema
 
-Puedes compilar el proyecto utilizando un compilador como *g++*. Por ejemplo:
+- **Sistema Operativo:** Multiplataforma (Windows, Linux, macOS).
+- **Compilador C++:** Se recomienda utilizar *g++* versión 7.0 o superior, ya que se requiere soporte para C++17.
+- **Bibliotecas Externas:** Solo se usan las bibliotecas estándar de C++ (`<iostream>`, `<vector>`, `<chrono>`, `<random>`, `<fstream>`).
+
+## Instrucciones de Compilación y Ejecución
+
+### Compilación
+
+Utiliza el siguiente comando en la terminal para compilar el código:
 
 ```bash
-g++ -O2 -std=c++17 main.cpp -o polinomios_benchmark
+g++ -O2 -std=c++17 main.cpp -o polinomios
